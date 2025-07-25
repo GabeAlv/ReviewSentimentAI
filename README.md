@@ -25,9 +25,8 @@ Caso queira utilizar ele pronto acesse o link do streamlit:
 https://reviewsentimentai-kgj9tzw6hufqgurdl7ayg6.streamlit.app/
 
 Para pré-processar o dataset e treinar o modelo 
-
-1- Instale as bibliotecas necessarias que estão no requirements.txt
-2- Coloque todos os scripts na mesma pasta
-3- Coloque o dataset na mesma pasta dos scripts
-4- Execute primeiro o limpeza_dataset.py, depois o treino_modelo.py
-5- Agora se divirta!
+1. Instale as bibliotecas necessarias que estão no requirements.txt
+2. Coloque todos os scripts na mesma pasta
+3. Coloque o dataset na mesma pasta dos scripts
+4. Execute primeiro o limpeza_dataset.py, depois o treino_modelo.py
+5. Agora se divirta!
