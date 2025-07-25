@@ -4,14 +4,16 @@ import nltk
 from nltk.corpus import stopwords
 import re
 
+
 nltk.download('stopwords') # caso execute só este script
 
-# carregando o modelo e o vetorizador
 modelo = None
 vetorizador = None
+
+# carregando o modelo e o vetorizador
 try:
-    modelo = joblib.load('modelo.pkl')
-    vetorizador = joblib.load('vetorizador.pkl')
+    modelo = joblib.load('Analisador-sentimento/modelo.pkl')
+    vetorizador = joblib.load('Analisador-sentimento/vetorizador.pkl')
 except FileNotFoundError:
     print('Arquivos não encotrados')
 
@@ -38,9 +40,7 @@ if texto_input:
 
     #vetorização
     texto_vetorizado = vetorizador.transform([texto_limpo])
-
     #predição
     sentimento = modelo.predict(texto_vetorizado)[0]
-
     st.subheader('O resultado é: ')
     st.success(f'O sentimento desta review é **{sentimento.upper()}** ✅ (Ótima)' if sentimento == 'Positivo' else f'O sentimento desta review é **{sentimento.upper()}**❌ (Ruim)')
