@@ -7,6 +7,8 @@ import re
 nltk.download('stopwords') # caso execute só este script
 
 # carregando o modelo e o vetorizador
+modelo = None
+vetorizador = None
 try:
     modelo = joblib.load('modelo.pkl')
     vetorizador = joblib.load('vetorizador.pkl')
