@@ -2,11 +2,9 @@ import streamlit as st
 import joblib
 import nltk
 from nltk.corpus import stopwords
-from limpeza_dataset import limpar_texto
-import spacy
+import re
 
 nltk.download('stopwords') # caso execute só este script
-spacy.cli.download("pt_core_news_sm")
 
 # carregando o modelo e o vetorizador
 try:
@@ -21,6 +19,13 @@ st.write('Digite uma review de um produto em português e o modelo vai prever o 
 
 #entrada do usuario
 texto_input = st.text_area('texto para analise: ')
+
+def limpar_texto(texto):
+  texto = re.sub(r'@\w+', '', texto) # remove menções
+  texto = re.sub(r'https?://\S+', '', texto) # remove URLs
+  texto = re.sub(r'[^a-zA-ZÀ-ÿ]', ' ', texto) # remove caracteres nao alfabéticos
+  texto = texto.lower() # colocando os textos no minusculo
+  return texto
 
 #removendo stopwords do português
 if texto_input:
