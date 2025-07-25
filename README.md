@@ -1,26 +1,67 @@
-# ReviewSentimentAI
-Classificador de sentimentos com Naive Bayes, que identifica se a review expressa opinião positiva ou negativa.
+# 🧠 Análise de Sentimentos com NLP e Naive Bayes
 
-Este projeto utiliza técnicas de Processamento de Linguagem Natural (NLP) e aprendizado de máquina para classificar textos automaticamente com base em seus padrões linguísticos. 
-A interface foi desenvolvida com o Streamlit, tornando a aplicação intuitiva e interativa.
+Este projeto aplica técnicas de Processamento de Linguagem Natural (NLP) para realizar uma análise de sentimentos em avaliações de clientes utilizando o algoritmo Naive Bayes e vetorização com TF-IDF. O conjunto de dados utilizado é da empresa B2W Digital.
 
-## Funcionalidades
+## 📌 Objetivo
 
-- Pré-processamento de textos (remoção de stopwords, lemmatização)
-- Vetorização usando TF-IDF
-- Classificação via modelo treinado
-- Visualização dos principais termos e métricas de predição
-- Upload de novos textos para classificação com Streamlit
+O objetivo principal é classificar automaticamente os sentimentos (positivos ou negativos) expressos em comentários de clientes, utilizando um modelo supervisionado de aprendizado de máquina.
 
-## Tecnologias utilizadas
+---
 
-- Python 3.11+
-- Streamlit
+## 📊 Dataset
+
+Utilizamos o dataset da **B2W Digital**, que contém mais de 120000 avaliações de clientes sobre produtos. As colunas utlizadas foram:
+
+- `review_text` – as reviews dos clientes
+- `rating` – a nota atribuída pelo cliente
+- `polarity` – a classe de sentimento 
+
+
+## 🛠️ Tecnologias Utilizadas
+
+- Python 3.10+
+- Pandas
 - Scikit-learn
 - NLTK
-- Pandas
+- Spacy
+- joblib
+- Streamlit
 
-## Como utilizar?
+---
+
+## ⚙️ Pré-processamento (NLP)
+
+- Remoção de pontuação e stopwords
+- Tokenização
+- Lemmatização
+- Vetorização com **TF-IDF**
+
+---
+
+## 🧪 Algoritmo Utilizado
+
+O modelo de **Naive Bayes (MultinomialNB)** foi utilizado por sua eficácia e simplicidade em tarefas de classificação de texto.
+
+---
+
+## 📈 Resultados
+Acurácia: 87%
+
+Precisão, recall e f1-score foram analisados.
+
+| Classe      | Precisão | Revocação | F1-Score | Suporte |
+|-------------|----------|-----------|----------|---------|
+| Negativo    | 0.85     | 0.73      | 0.79     | 7.128   |
+| Positivo    | 0.89     | 0.94      | 0.92     | 16.084  |
+| **Média**   | **0.88** | **0.88**  | **0.88** | 23.212  |
+
+Matriz de confusão foi analisada
+[[ 5198  1930]
+ [  885 15199]]
+ 
+ ---
+ 
+## 🐍 Como utilizar?
 Caso queira utilizar ele pronto acesse o link do streamlit:
 https://reviewsentimentai-kgj9tzw6hufqgurdl7ayg6.streamlit.app/
 
