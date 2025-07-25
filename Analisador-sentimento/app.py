@@ -3,8 +3,10 @@ import joblib
 import nltk
 from nltk.corpus import stopwords
 from limpeza_dataset import limpar_texto
+import spacy
 
 nltk.download('stopwords') # caso execute só este script
+spacy.cli.download("pt_core_news_sm")
 
 # carregando o modelo e o vetorizador
 try:
