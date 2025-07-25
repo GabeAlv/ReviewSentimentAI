@@ -13,7 +13,7 @@ try:
 except FileNotFoundError:
     print('Arquivos não encotrados')
 
-#interface
+#interface do streamlit
 st.title('Analisador de sentimentos de review de produtos')
 st.write('Digite uma review de um produto em português e o modelo vai prever o sentimento (positivo ou negativo)')
 
